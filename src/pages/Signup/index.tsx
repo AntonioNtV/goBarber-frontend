@@ -3,6 +3,8 @@ import {
   FiArrowLeft, FiMail, FiLock, FiUser,
 } from 'react-icons/fi';
 import { Form } from '@unform/web';
+import * as Yup from 'yup';
+
 import { Container, Content, Background } from './styles';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -15,8 +17,20 @@ interface Request {
 }
 
 const Signup: React.FC = () => {
-  const handleSubmit = useCallback((data: Request) => {
-    console.log(data.name);
+  const handleSubmit = useCallback(async (data: Request) => {
+    try {
+      const schema = Yup.object().shape({
+        name: Yup.string().required('Nome obrigatório'),
+        email: Yup.string().required('Email obrigatório').email('Digite um e-mail válido'),
+        password: Yup.string().min(6, 'No mínimo 6 dígitos'),
+      });
+
+      await schema.validate(data, {
+        abortEarly: false,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   return (
