@@ -21,6 +21,10 @@ const Content = styled.div`
     margin: 80px 0;
     width: 340px;
     text-align: center;
+
+    h1 {
+      margin-bottom: 24px;
+    }
   }
 
   > a {
