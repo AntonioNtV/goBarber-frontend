@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   FiArrowLeft, FiMail, FiLock, FiUser,
 } from 'react-icons/fi';
@@ -15,9 +15,9 @@ interface Request {
 }
 
 const Signup: React.FC = () => {
-  function handleSubmit(data: Request):void {
+  const handleSubmit = useCallback((data: Request) => {
     console.log(data.name);
-  }
+  }, []);
 
   return (
     <Container>
