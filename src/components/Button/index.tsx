@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-const Button: React.FC = () => (
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  name: string;
+}
+
+const Button: React.FC<ButtonProps> = () => (
   <>
     <button type="submit">Teste</button>
   </>
