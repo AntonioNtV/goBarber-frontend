@@ -1,8 +1,6 @@
 import React, { ButtonHTMLAttributes } from 'react';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  name: string;
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
 const Button: React.FC<ButtonProps> = () => (
   <>
