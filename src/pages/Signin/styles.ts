@@ -62,12 +62,6 @@ const AnimationContainer = styled.div`
 
   }`;
 
-const Container = styled.div`
-  height: 100vh;
-  display: flex;
-  align-items: stretch;
-`;
-
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -76,6 +70,12 @@ const Content = styled.div`
 
   width: 100%;
   max-width: 700px;
+`;
+
+const Container = styled.div`
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
 `;
 
 const Background = styled.div`
