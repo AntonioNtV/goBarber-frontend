@@ -13,7 +13,8 @@ interface SignInCredentials {
 }
 
 interface AuthContextData {
-  name: string,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  user: object
   signIn(credentials: SignInCredentials): Promise<void>
 }
 
@@ -49,7 +50,7 @@ const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ name: 'Neto', signIn }}>
+    <AuthContext.Provider value={{ user: data.user, signIn }}>
       { children}
     </AuthContext.Provider>
   );
