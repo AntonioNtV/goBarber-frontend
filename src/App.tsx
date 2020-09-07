@@ -4,10 +4,14 @@ import GlobalSytle from './styles/global';
 import Signin from './pages/Signin/index';
 import Signup from './pages/Signup/index';
 
+import { AuthProvider } from './context/AuthContext';
+
 const App: React.FC = () => (
   <>
     <GlobalSytle />
-    <Signup />
+    <AuthProvider>
+      <Signin />
+    </AuthProvider>
   </>
 );
 
