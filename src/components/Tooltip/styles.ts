@@ -10,6 +10,7 @@ const Container = styled.div`
     font-weight: 500;
     opacity: 0;
     transition: opacity 0.4s;
+    visibility: hidden;
 
     position: absolute;
     bottom: calc(100% + 12px);
@@ -37,6 +38,7 @@ const Container = styled.div`
   }
   &:hover span {
      opacity: 100;
+     visibility: visible;
   }
 `;
 
