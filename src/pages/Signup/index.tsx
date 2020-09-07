@@ -4,6 +4,7 @@ import {
 } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
+import { Link } from 'react-router-dom';
 
 import * as Yup from 'yup';
 
@@ -54,10 +55,10 @@ const Signup: React.FC = () => {
           <Button type="submit">Cadastrar</Button>
         </Form>
 
-        <a href="create">
+        <Link to="/">
           <FiArrowLeft />
           Voltar para o login
-        </a>
+        </Link>
       </Content>
     </Container>
   );
