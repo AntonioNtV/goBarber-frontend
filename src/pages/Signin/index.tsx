@@ -9,7 +9,7 @@ import logoImg from '../../assets/logo.svg';
 import Button from '../../components/Button/index';
 import Input from '../../components/Input/index';
 import getValidationErrors from '../../utils/getValidationErros';
-import { useAuth } from '../../hooks/AuthContext';
+import { useAuth } from '../../hooks/auth';
 
 interface SignInFormData {
   email: string,
@@ -38,8 +38,12 @@ const Signin: React.FC = () => {
         password: data.password,
       });
     } catch (error) {
-      const errors = getValidationErrors(error);
+      if (error instanceof Yup.ValidationError) {
+        const errors = getValidationErrors(error);
         formRef.current?.setErrors(errors);
+      }
+
+      // Disparar um toast
     }
   }, [signIn]);
 
