@@ -7,6 +7,8 @@ import { useToast, ToastMessage } from '../../hooks/toast';
 
 interface ToastProps {
   toast: ToastMessage
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  style: object
 }
 
 const icons = {
@@ -15,7 +17,7 @@ const icons = {
   error: <FiAlertCircle size={24} />,
 };
 
-const Toast: React.FC<ToastProps> = ({ toast }: ToastProps) => {
+const Toast: React.FC<ToastProps> = ({ toast, style }: ToastProps) => {
   const { removeToast } = useToast();
 
   useEffect(() => {
@@ -32,6 +34,7 @@ const Toast: React.FC<ToastProps> = ({ toast }: ToastProps) => {
     <Container
       type={toast.type}
       hasDescription={!!toast.description}
+      style={style}
     >
       {icons[toast.type || 'info']}
       <div>
