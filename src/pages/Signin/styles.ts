@@ -2,20 +2,10 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 import signInBackground from '../../assets/sign-in-background.png';
 
-const Container = styled.div`
-  height: 100vh;
-  display: flex;
-  align-items: stretch;
-`;
-
-const Content = styled.div`
+const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  place-content: center;
-
-  width: 100%;
-  max-width: 700px;
 
   form {
     margin: 80px 0;
@@ -55,8 +45,22 @@ const Content = styled.div`
         margin-right: 18.5px;
       }
 
-  }
+  }`;
 
+const Container = styled.div`
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-content: center;
+
+  width: 100%;
+  max-width: 700px;
 `;
 
 const Background = styled.div`
@@ -65,4 +69,6 @@ const Background = styled.div`
   background-size: cover;
 `;
 
-export { Container, Content, Background };
+export {
+  Container, Content, Background, AnimationContainer,
+};
