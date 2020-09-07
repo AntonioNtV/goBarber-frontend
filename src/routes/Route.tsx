@@ -13,10 +13,15 @@ const Route: React.FC<RouteProps> = ({ isPrivate = false, component: Component, 
     <ReactDOMRoute
       {...rest}
       render={
-          () => (isPrivate === !!user ? (
+          ({ location }) => (isPrivate === !!user ? (
             <Component />
           ) : (
-            <Redirect to={{ pathname: isPrivate ? '/' : '/dashboard' }} />
+            <Redirect
+              to={{
+                pathname: isPrivate ? '/' : '/dashboard',
+                state: { from: location },
+              }}
+            />
           ))
         }
     />
