@@ -5,7 +5,6 @@ import Signin from './pages/Signin/index';
 import Signup from './pages/Signup/index';
 
 import AppProvider from './hooks';
-import { ToastContainer } from './components/ToastContainer';
 
 const App: React.FC = () => (
   <>
@@ -13,7 +12,6 @@ const App: React.FC = () => (
     <AppProvider>
       <Signin />
     </AppProvider>
-    <ToastContainer />
   </>
 );
 
